@@ -1,4 +1,4 @@
-package com.company;
+package Exercises;
 
 import org.w3c.dom.ls.LSOutput;
 
