@@ -44,10 +44,10 @@ public class Calculator extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
 	// write your code here
-        Calculator calculator = new Calculator();                // new function calculator?
-        calculator.setSize(400,400);               // Grootte scherm in pixels
-        calculator.setVisible(true);                            // Maakt scherm zichtbaar, anders staat hij op achtergrond
-        calculator.setDefaultCloseOperation(EXIT_ON_CLOSE);     // Scherm echt uit, niet op achtergrond
+        Calculator calculator = new Calculator();
+        calculator.setSize(400,400);
+        calculator.setVisible(true);
+        calculator.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     @Override
