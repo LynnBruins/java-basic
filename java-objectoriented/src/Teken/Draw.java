@@ -13,23 +13,12 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
     String currentButton;
     Figure figure = new Rectangle();
     ArrayList<Figure> figures = new ArrayList<>();
-    JComboBox<String> selectColor = new JComboBox<String>();
     JComboBox<String> selectLine = new JComboBox<String>();
 
 
     public Draw() throws HeadlessException {
 
         this.setTitle("Drawing program");
-
-        getContentPane().add(selectColor, BorderLayout.PAGE_START);
-        selectColor.setPreferredSize(new Dimension(600,30));
-        selectColor.addItem("Black");
-        selectColor.addItem("White");
-        selectColor.addItem("Red");
-        selectColor.addItem("Blue");
-        selectColor.addItem("Green");
-        selectColor.addItem("Yellow");
-        selectColor.addActionListener(this);
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(9,1));
@@ -86,9 +75,6 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
         currentButton = e.getActionCommand();
         System.out.println(currentButton);
 
-        String colorselected = (String) selectColor.getSelectedItem();
-        System.out.println(colorselected);
-
         switch (currentButton) {
             case "Clear Screen":
                 figures.clear();
@@ -96,8 +82,7 @@ public class Draw extends JFrame implements MouseListener, ActionListener {
                 break;
             case "Colors":
                 Color color = JColorChooser.showDialog(null, "Choose a color", Color.RED);
-                System.out.println(color);
-                // = new Color();
+                setForeground(color);
                 break;
             default:
                 System.out.println("System Error");
